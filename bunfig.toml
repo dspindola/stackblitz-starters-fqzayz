@@ -1,0 +1,12 @@
+jsx = "react-jsx"
+jsxImportSource = "react"
+
+[define]
+"import.meta.env.MODE" = "'development'"
+
+[run]
+bun = true
+shell = "bun"
+
+[test]
+root = "./__tests__"

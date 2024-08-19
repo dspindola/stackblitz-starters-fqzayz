@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "target": "ESNEXT",
+    "useDefineForClassFields": true,
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "isolatedModules": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["app/*"]
+    },
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "allowArbitraryExtensions": true,
+    "verbatimModuleSyntax": true,
+    "plugins": [
+      {
+        "name": "@mdx-js/typescript-plugin"
+      }
+    ]
+  },
+  "include": ["./app/**/*.ts", "./app/**/*.tsx", "./app/**/*.mdx"],
+  "mdx": {
+    "checkMdx": false
+  }
+}

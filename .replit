@@ -1,0 +1,28 @@
+run = "NODE_ENV=development bun run --port=8080 --watch ./server/index.ts"
+entrypoint = "./server/index.ts"
+modules = ["nodejs-22", "typescript-language-server", "bash"]
+
+[nix]
+channel = "unstable"
+
+[env]
+XDG_CONFIG_HOME = "/home/runner/$REPL_SLUG/.config"
+XDG_CACHE_HOME = "/home/runner/$REPL_SLUG/.cache"
+XDG_DATA_HOME = "/home/runner/$REPL_SLUG/.local"
+BUN_INSTALL = "/home/runner/$REPL_SLUG/.config/.bin"
+PATH = "/home/runner/$REPL_SLUG/.config/.bun/bin:/home/runner/$REPL_SLUG/.config/.proto/bin"
+PROTO_HOME = "/home/runner/$REPL_SLUG/.config/.proto"
+
+[deployment]
+run = [
+  "sh",
+  "-c",
+  "NODE_ENV=production bun run --port=8080 --smol ./server/index.ts",
+]
+deploymentTarget = "static"
+publicDir = "public"
+build = ["bun --bun vite build"]
+
+[[ports]]
+localPort = 8080
+externalPort = 80

@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gunmetal: #161821;
+  --color-light-gray: #f0f0f0;
+  --color-soft-beige: #f5f5dc;
+  --color-light-taupe: #d8d2cb;
+}
